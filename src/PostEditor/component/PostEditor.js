@@ -18,7 +18,7 @@ class PostEditor extends Component {
 
   createPost() {
     let emptyPostCheck = this.state.newPostBody.split(' ').join('');
-    if (emptyPostCheck != '') {
+    if (emptyPostCheck !== '') {
     this.props.addPost(this.state.newPostBody);
     this.setState({newPostBody: ''});
   }

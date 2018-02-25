@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
-import ThreadDisplay from './ThreadDisplay/component/ThreadDisplay';
+
 
 class App extends Component {
   goTo(route) {

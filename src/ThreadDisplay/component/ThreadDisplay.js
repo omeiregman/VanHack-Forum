@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from '../../Post/component/Post';
 import PostEditor from '../../PostEditor/component/PostEditor';
-
+import axios from 'axios';
 class ThreadDisplay extends React.Component {
 
   constructor(props) {
@@ -12,6 +12,20 @@ class ThreadDisplay extends React.Component {
     this.state = {
       posts: []
     }
+  }
+
+  api=()=>{
+    const EVENT_URL = 'https://vanhackforum-api.herokuapp.com/posts';
+    axios.get (EVENT_URL).then(
+      (response) => {
+        this.setState({
+          posts:response.data
+        });
+      });
+  }
+
+  componentDidMount() {
+    this.api();
   }
 
   addPost(newPostBody) {
